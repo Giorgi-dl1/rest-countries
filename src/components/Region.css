@@ -28,3 +28,6 @@
 .region:hover{
     background-color: aliceblue;
 }
+.active{
+    background-color: black;
+}

@@ -1,16 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {AiOutlineArrowDown,AiOutlineArrowUp}from 'react-icons/ai';
 import './Region.css';
 function Region({changeRegion}) {
   const [showRegions,setShowRegions]=useState(false);
+  const [region,setRegion]=useState('Filter by Region');
+
   const handleClick=(val)=>{
     changeRegion(val);
     setShowRegions(!showRegions);
+    if(val==='All'){
+      setRegion('Filter by Region')
+    }else{
+      setRegion(val)
+    }
   }
   return (
     <div className="region-filter">
       <div className="toggle-regions" onClick={()=>setShowRegions(!showRegions)}>
-       <p>Filter by Region</p> {showRegions?<AiOutlineArrowUp/>:<AiOutlineArrowDown/>}
+       <p>{region}</p> {showRegions?<AiOutlineArrowUp/>:<AiOutlineArrowDown/>}
       </div>
       {showRegions 
       &&
