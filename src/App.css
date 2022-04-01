@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.App{
+    min-height: 100vh;
+    background-color: white;
+    color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App.dark header{
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+.items{
+    padding: 0 3rem;
+    background-color: hsla(0, 3%, 94%, 0.877);
+    min-height: calc(100vh - 69px);
+}
+.App.dark .items{
+    background-color: hsla(0, 0%, 0%, 0.938);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.App.dark .items .filter-div .region-filter .toggle-regions{
+    background-color: hsl(0, 14%, 95%);
+}
+.App.dark .items .filter-div .region-filter .regions{
+    background-color: hsl(0, 14%, 95%);
+}
+.App.dark .items .countries .country{
+    background-color: hsl(0, 14%, 95%);
+}
+.filter-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+.loading{
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -1,0 +1,10 @@
+.countries{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minMax(16rem,1fr));
+    gap: 4rem;
+}
+.nomatch{
+    text-align: center;
+    opacity: .8;
+    margin-top: 20vh;
+}
