@@ -1,12 +1,12 @@
 .region-filter{
     position: relative;
     color: black;
+    width: 10.9rem;
 }
 .toggle-regions{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: .3rem;
+    justify-content: space-between;
     background-color: white;
     padding: .7rem 1rem;
     cursor: pointer;
@@ -28,6 +28,4 @@
 .region:hover{
     background-color: aliceblue;
 }
-.active{
-    background-color: black;
-}
+
