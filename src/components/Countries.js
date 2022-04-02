@@ -1,6 +1,6 @@
 import Country from "./Country";
 import './Countries.css'
-function Countries({data}) {
+function Countries({data,showMore}) {
   if(data.length==0){
     return(
       <div className="nomatch">
@@ -11,17 +11,26 @@ function Countries({data}) {
   return (
     <div className="countries">
         {data.map((item,index)=>{
-            const{continents,capital,name,population,flags}=item;
+            const{region,capital,name,population,flags}=item;
             if(!capital){
-                return
+                return(
+                  <Country key={index}
+                  region={region} 
+                  capital={'Not Found'}
+                  name={name.common}
+                  population={population}
+                  flag={flags.svg}/>
+                )
             }
          return(
           <Country key={index}
-           region={continents[0]} 
+           region={region} 
            capital={capital[0]}
            name={name.common}
            population={population}
-           flag={flags.png}/>
+           flag={flags.png}
+           showMore={showMore}
+           countryData={item}/>
          ) 
         })}
     </div>

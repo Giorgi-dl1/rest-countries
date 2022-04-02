@@ -1,7 +1,7 @@
 import './Country.css'
-function Country({region,capital,name,population,flag}) {
+function Country({region,capital,name,population,flag,showMore,countryData}) {
   return (
-    <div className="country">
+    <div className="country" onClick={()=>showMore(countryData)}>
         <div className="flag">
             <img src={flag} alt="flag"/>
         </div>

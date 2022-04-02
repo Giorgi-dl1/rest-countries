@@ -40,6 +40,9 @@ body{
     justify-content: space-between;
     padding: 2rem 0;
 }
+.dark .items .nomatch{
+    color:white;
+}
 .loading{
     display: grid;
     place-items: center;
@@ -57,4 +60,27 @@ body{
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+  }
+  @media(max-width:600px){
+    .filter-div{
+        align-items: flex-start;
+        flex-direction: column;
+        /* margin-left: 40%;
+        transform: translateX(-50%); */
+    }
+    .region-filter{
+        margin-top: 1rem;
+    }
+    header h2{
+        font-size: 1.1rem;
+    }
+    header div{
+        font-size: 13px;
+    }
+    .toggle-regions{
+        font-size: 13px;
+    }
+    .region{
+        font-size: 13px;
+    }
   }

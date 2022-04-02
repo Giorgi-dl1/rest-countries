@@ -1,0 +1,93 @@
+.back-btn{
+    display: flex;
+    box-shadow: 1px 1px 3px hsla(0, 0%, 0%, 0.527);
+    width: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: .3rem 1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.back-btn:hover{
+    opacity: 0.8;
+}
+.more-info{
+    padding: 0 3rem;
+    background-color: hsla(0, 0%, 89%, 0.363);
+    min-height: calc(100vh - 69px);
+    padding-top: 2rem;
+}
+.info-flag{
+    display: flex;
+    align-items: center;
+}
+.more-info-flag{
+    width: 500px;
+}
+.more-info-flag img{
+    width: 100%;
+    max-height: 330px;
+}
+.information{
+    margin-left: 6rem;
+    width: 50%;
+}
+.information h1{
+    padding: 1rem 0;
+}
+.proporties{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.proporties div p{
+    margin-bottom: .4rem;
+    letter-spacing: 1px;
+}
+.border-countries p span{
+    padding: 0 .8rem;
+    margin: 0 .3rem;
+    border-radius: 5px;
+    box-shadow: 0 0 2px hsla(0, 0%, 0%, 0.507);
+}
+.dark .more-info{
+    background-color: hsla(0, 0%, 0%, 0.877);
+    color: rgb(224, 224, 224);
+}
+.dark .more-info .back-btn{
+    background-color: rgb(240, 239, 239);
+}
+.dark .more-info .info-flag .information .border-countries p span{
+    box-shadow: 0 0 3px hsla(0, 0%, 65%, 0.507);
+}
+@media(max-width:850px){
+    .info-flag{
+        flex-direction: column;
+    }
+    .more-info-flag{
+        width: 100%;
+    }
+    .information{
+        margin-left: 0;
+        width: 100%;
+        margin-bottom:2rem ;
+    }
+    .more-info-flag img{
+        max-height: 430px;
+    }
+}
+@media(max-width:500px){
+    .information h1{
+        font-size: 1.7rem;
+    }
+    .proporties{
+        flex-direction: column;
+        gap: 0;
+    }
+    .proporties div p{
+        font-size: 15px;
+    }
+}

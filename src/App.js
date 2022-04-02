@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Region from "./components/Region";
 import Input from "./components/Input";
 import Countries from "./components/Countries";
+import MoreInfo from "./components/MoreInfo";
 import './App.css'
 import { useEffect, useState } from "react";
 
@@ -12,6 +13,8 @@ function App() {
   const [loading,setLoading]=useState(true);
   const [dataByRegion,setDataByRegion]=useState([]);
   const [filteredData,setFilteredData]=useState([]);
+  const [showMore,setShowMore] = useState(false);
+  const [moreInfoData,setMoreInfoData]=useState([]);
   const toggleDark=()=>{
     document.querySelector('.App').classList.toggle('dark');
     setFillMoon(!fillMoon);
@@ -49,6 +52,14 @@ function App() {
     const filteredDataVar=dataByRegion.filter(item => item.name.common.toLowerCase().includes(e.target.value.toLowerCase()));
     setFilteredData(filteredDataVar);
   }
+  const seeMore = (data)=>{
+    setShowMore(true)
+    setMoreInfoData(data)
+  }
+  const closeMoreInfo = ()=>{
+    setShowMore(false);
+    setMoreInfoData([]);
+  }
   if(loading){
     return(
       <div className="loading">
@@ -56,19 +67,28 @@ function App() {
       </div>
     )
   }
-  return (
-    <main className="App">
-     <Header handleclick={toggleDark} fillMoon={fillMoon}/>
-     <div className="items">
-        <div className="filter-div">
-          <Input value={input} handleChange={inputFilter}/>
-          <Region changeRegion={changeRegion}/>
+  if(showMore){
+    return (
+      <main className="App">
+        <Header handleclick={toggleDark} fillMoon={fillMoon}/>
+        <MoreInfo closeMoreInfo={closeMoreInfo} data={moreInfoData}/>
+      </main>
+    )
+  }else{
+    return (
+      <main className="App">
+        <Header handleclick={toggleDark} fillMoon={fillMoon}/>
+        <div className="items">
+            <div className="filter-div">
+              <Input value={input} handleChange={inputFilter}/>
+              <Region changeRegion={changeRegion}/>
+            </div>
+            <Countries data={filteredData} showMore={seeMore}/>
         </div>
-        <Countries data={filteredData}/>
-     </div>
-     
-    </main>
-  );
+      
+      </main>
+    );
+  }
 }
 
 
