@@ -11,6 +11,7 @@
     padding: .7rem 1rem;
     cursor: pointer;
     border-radius: 7px;
+    max-width: 70vw;
 }
 .regions{
     position: absolute;
