@@ -26,13 +26,16 @@ body{
 }
 
 .App.dark .items .filter-div .region-filter .toggle-regions{
-    background-color: hsl(0, 14%, 95%);
+    background-color: hsl(136, 100%, 98%);
 }
 .App.dark .items .filter-div .region-filter .regions{
-    background-color: hsl(0, 14%, 95%);
+    background-color: hsl(136, 100%, 98%);
+}
+.App.dark .items .filter-div .region-filter .regions .region:hover{
+    background-color: hsla(157, 68%, 94%, 0.993);
 }
 .App.dark .items .countries .country{
-    background-color: hsl(0, 14%, 95%);
+    background-color: hsla(0, 43%, 99%, 0.979);
 }
 .filter-div{
     display: flex;
@@ -62,17 +65,18 @@ body{
     100% { transform: rotate(360deg); }
   }
   @media(max-width:600px){
+    header{
+        padding: 1rem 1rem;
+    }
     .filter-div{
         align-items: flex-start;
         flex-direction: column;
-        /* margin-left: 40%;
-        transform: translateX(-50%); */
     }
     .region-filter{
         margin-top: 1rem;
     }
     header h2{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     header div{
         font-size: 13px;
@@ -82,5 +86,8 @@ body{
     }
     .region{
         font-size: 13px;
+    }
+    .items{
+        padding: 0 1rem;
     }
   }
